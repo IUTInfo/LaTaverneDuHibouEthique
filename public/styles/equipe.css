@@ -1,0 +1,10 @@
+@import './commun.css';
+
+main p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+#titre {
+    text-align: center;
+}
