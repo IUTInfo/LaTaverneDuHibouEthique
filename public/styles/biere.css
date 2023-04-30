@@ -3,7 +3,7 @@
 /** PAGE BIERES **/
 
 .biere_classe{
-    margin: auto ;
+    margin-left: auto;
     padding: 4%;
     width: 55%;
     box-sizing: border-box;
@@ -72,6 +72,8 @@
     transform: rotate(30deg);
     margin-top: 15%;*/
     object-fit: contain;
+    margin-right: auto;
+    margin-left: 5rem;
 }
 
 #Im2_pagebiere{

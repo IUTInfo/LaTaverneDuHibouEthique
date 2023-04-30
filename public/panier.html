@@ -1,120 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <link rel="stylesheet" type="text/css" href="/styles/panier.css">
-        <meta charset="utf-8">
-        <title>Panier</title>
+        <meta charset="UTF-8">
+        <title>Taverne - Panier</title>
+        <link rel="stylesheet" href="/styles/panier.css">
+        <script defer src="/scripts/api.js"></script>
+        <script defer src="/scripts/panier.js"></script>
     </head>
     <body>
         <header>
             <a id="blocLogo" href="index.html">
-            <img src="/img/logo.png" id="logo" alt="Logo">
-            <span>La taverne du<br>hibou éthique</span>
+                <img src="/img/logo.png" id="logo" alt="Logo">
+                <span>La taverne du<br>hibou éthique</span>
             </a>
             <div id="links">
-            <a href="index.html">Accueil</a>
-            <a href="nosbieres.html">Nos bières</a>
-            <a href="panier.html">Panier</a>
+                <a href="index.html">Accueil</a>
+                <a href="bieres.html">Nos bières</a>
+                <a href="panier.html">Panier</a>
             </div>
         </header>
         <main>
-            <figure id="contenu">
-                 <!-- comment en créer plus ou moins?? -->
-                <h1>Panier</h1>
-                <p id="cacher">Gurdil was here</p>
-                    <img src="/img/biere.png" alt="Une bière" class="Photo"/>
-                    <div class="biere">
-                        <h2>Titre bière</h2>
-                        <h3>type</h3>
-                        <div class="info">
-                            <h3>7.5%</h3>
-                            <h3>28 Or/bouteille</h3>
-                            <div class="info">
-                                <button class="boutonPM" type="button">+</button>
-                                <button class="boutonPM" type="button">-</button>
-                                <button class="boutonSuppr" type="button">Supprimer</button>
-                                <br>
-                            </div> 
-                        </div> 
-                    </div>
-
-                    
-
-            
-
-                    <img src="../img/biere.png" alt="Une bière" class="Photo"/>
-                    <div class="biere">
-                        <h2>Titre bière</h2>
-                        <h3>type</h3>
-                        
-                        <div class="info">
-                            <h3>7.5%</h3>
-                            <h3>28 Or/bouteille</h3>
-                            <div class="info">
-                                <button class="boutonPM" type="button">+</button>
-                                <button class="boutonPM" type="button">-</button>
-                                <button class="boutonSuppr" type="button">Supprimer</button>
-                                <br>
-                            </div> 
-                        </div>
-                    </div>  
-                   
-                
-
-
-                <h2>LA suggestion</h2><br>
-                        <img src="../img/biere.png" alt="Une bière" class="Photo"/>
-                        <div class="biere">
-                            <h2>Titre bière</h2>
-                            <h3>type</h3>
-                            
-                            <div class="info">
-                                <h3>7.5%</h3>
-                                <h3>28 Or/bouteille</h3>
-                                <div class="info">
-                                    <button class="boutonPM" type="button">+</button>
-                                    <button class="boutonPM" type="button">-</button>
-                                    <br>
-                                </div> 
+            <div>
+                <div id="panier">
+                    <h1>Récapitulatif</h1>
+                    <div>
+                        <img src="biere.png" alt="bière">
+                        <div class="infoBiere">
+                            <h3>Titre bière</h3>
+                            <p>Type</p>
+                            <div>
+                                <p>7.5%</p>
+                                <span><p>28</p><p> Or/Bouteille</p></span>
                             </div>
-                            
                         </div>
-                        
-                        
+                        <input type="number" value="">
+                        <button>Supprimer</button>
 
+                        <img src="biere.png" alt="bière">
+                        <div class="infoBiere">
+                            <h3>Titre bière</h3>
+                            <p>Type</p>
+                            <div>
+                                <p>7.5%</p>
+                                <span><p>28</p><p> Or/Bouteille</p></span>
+                            </div>
+                        </div>
+                        <input type="number" value="">
+                        <button>Supprimer</button>
 
+                        <img src="biere.png" alt="bière">
+                        <div class="infoBiere">
+                            <h3>Titre bière</h3>
+                            <p>Type</p>
+                            <div>
+                                <p>7.5%</p>
+                                <span><p>28</p><p> Or/Bouteille</p></span>
+                            </div>
+                        </div>
+                        <input type="number" value="">
+                        <button>Supprimer</button>
 
-
-            </figure>
-            <figure id="resumer">
-                <h2 class="text-center">Votre commande</h2><br>
-                <p>
-                    <div class="commande">
-                        <h3>4xTitre bière</h3> 
-                        <h3>150 Or</h3> 
+                        <img src="biere.png" alt="bière">
+                        <div class="infoBiere">
+                            <h3>Titre bière</h3>
+                            <p>Type</p>
+                            <div>
+                                <p>7.5%</p>
+                                <span><p>28</p><p> Or/Bouteille</p></span>
+                            </div>
+                        </div>
+                        <input type="number" value="">
+                        <button>Supprimer</button>
                     </div>
-                    
-                    <div class="commande">
-                        <h3>4xTitre bière</h3> 
-                        <h3>150 Or</h3> 
+                </div>
+                <div id="suggestion">
+                    <h2>LA suggestion</h2>
+                    <div>
+                        <img src="biere.png" alt="bière">
+                        <div class="infoBiere">
+                            <h3>Titre bière</h3>
+                            <p>Type</p>
+                            <div>
+                                <p>7.5%</p>
+                                <span><p>28</p><p> Or/Bouteille</p></span>
+                            </div>
+                        </div>
+                        <input type="number" value="0">
                     </div>
-                </p>
-                <p class="text-center">
-                    _______________________________
-                </p>
-
-                <p>
-                    <div class="commande">
-                        <h3>Total</h3>
-                        <h3>150 Or</h3>
+                </div>
+            </div>
+            <div id="commande">
+                <h2>Votre commande</h2>
+                <div>
+                    <span>
+                        <p>4 x Biere1</p>
+                        <p>150 Or</p>
+                    </span>
+                    <span>
+                        <p>4 x Biere1</p>
+                        <p>150 Or</p>
+                    </span>
+                    <span>
+                        <p>4 x Biere1</p>
+                        <p>150 Or</p>
+                    </span>
+                    <hr>
+                    <span>
+                        <p>Total</p>
+                        <p>450 Or</p>
+                    </span>
+                    <span>
+                        <p>+ Echantillon offert par la maison de Kill Elves</p>
+                    </span>
+                    <div>
+                        <button>Procéder au paiement</button>
                     </div>
-                    <h3>+ un échantillon de ....</h3>
-                </p>
-            
-                <p class="text-center">
-                <a href="test.html"><button class="bouton" type="button" id="boutonB">Procéder au paiment</button></a><!-- lien a la page paiement -->
-                </p>
-            </figure>
+                </div>
+            </div>
         </main>
+        <footer>
+            <a href="https://www.youtube.com/watch?v=YEfRk_WC8Dc">A propos</a>
+            <p> | </p>
+            <a href="equipe.html">Notre équipe</a>
+            <p> | </p>
+            <a href="mentionslegales.html">Mentions légales</a>
+        </footer>
     </body>
 </html>
