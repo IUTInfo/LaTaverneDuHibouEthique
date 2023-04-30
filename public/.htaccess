@@ -1,4 +1,9 @@
 RewriteEngine on
 DirectoryIndex accueil.html
 RewriteRule ^accueil$ accueil.html
+RewriteRule ^biere/([0-9]+)$ biere.html?id=$1 [END]
+RewriteRule ^biere$ biere.html
+RewriteRule ^mentionslegales$ mentionslegales.html
 RewriteRule ^paiement$ paiement.html
+RewriteRule ^panier$ panier.html
+RewriteRule ^remerciment$ remerciment.html

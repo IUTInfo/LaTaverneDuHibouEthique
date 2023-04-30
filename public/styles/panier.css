@@ -1,0 +1,86 @@
+@import './commun.css';
+
+.boutonPM{
+    background-color: white;
+    border-style : none;
+    color: black;
+    height: 80%;
+}
+
+.boutonPM:hover{
+    box-shadow: inset 200px 0 0 0 #E36016;
+    
+}
+
+.boutonSuppr{
+    text-decoration: underline;
+    color:white;
+    background-color: transparent;
+    border-style : none;
+}
+
+.boutonSuppr:hover{
+    color:#E36016;
+}
+
+#boutonB{
+    margin-top: 15%;
+}
+
+#boutonB:hover{
+    text-decoration: underline;
+}
+#contenu img {
+	display: block;
+    height: 100%;
+    object-fit: contain;
+    position:absolute;
+}
+
+#contenu{
+    position:absolute;
+    padding-bottom: 5%;
+    display: block;
+	width: 50%;
+    height: 5%;
+
+}
+
+#biere{
+    position:relative;
+    padding-left: 10%;
+    margin-bottom: 10%;
+   
+}
+
+#info{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+#resumer{
+    margin-top: 20%;
+	font-size: 20px;
+	position:relative;
+	left: 70%;
+	width: 30%;
+	text-align: left;
+}
+
+#commande{
+    display: flex;
+    justify-content: space-between;
+}
+
+main{
+    padding-bottom: 20%;
+}
+
+#cacher{
+    color:#1E1D1A;
+}
+
+#centrage{
+    text-align: center;
+}

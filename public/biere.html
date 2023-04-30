@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8"> <!--mettre favicon-->
+    <title class="biere">Les Bières</title>
+    <link rel="stylesheet" href="/styles/biere.css">
+    <script defer src="/scripts/api.js"></script>
+    <script defer src="/scripts/biere.js"></script>
+</head>
+
+<body>
+    <header>
+        <a id="blocLogo" href="accueil.html">
+            <img src="/img/logo.png" id="logo" alt="Logo">
+            <span>La taverne du<br>hibou éthique</span>
+        </a>
+        <div id="links">
+            <a href="accueil.html">Accueil</a>
+            <a href="nosbieres.html">Nos bières</a>
+            <a href="panier.html">Panier</a>
+        </div>
+    </header>
+
+    <main>
+        <div class ="ensemble">
+            <div class="biere_classe">
+                <div id="title">
+                    <div>
+                        <h1 id="beertitle">Titre Bière</h1>
+                        <p> - </p>
+                        <p id="beerrank">1/5</p>
+                    </div>
+                    <div class="spect">
+                        <p id="beeralcohol">STOUT - 7%</p>
+                        <p id="prix">28 OR</p>
+                    </div>
+                </div>
+
+                <p id="description">Une poulie est une machine simple, c'est-à-dire un dispositif de mécanique élémentaire1. Elle est constituée d'une pièce en forme de roue servant à la transmission du mouvement. La poulie est utilisée avec une courroie, une corde, une chaîne ou un câble et la forme de la jante étant adaptée aux cas d'utilisation.On donne parfois (en voile) le nom de poulie à une moufle contenant une poulie à gorge, laquelle prend le nom de réa, la chape (la partie fixe) composée de deux joues est parfois équipée d'un anneau métallique destiné à frapper un cordage, le ringot. Il existe des poulies simples, ou à réas multiples.</p>
+
+                <div id="buttons">
+
+                    <div id="numberAndAdd">
+                        <input type="number" name="quantity" id="nbbiere" value="1">
+                        <button type="button" id="addPanier">Ajouter au panier</button>
+                    </div>
+
+                    <button type="button" id="oneClickOrder">Commander en 1 clic</button>
+                </div>
+            </div>
+
+            <img class="imageBiere" id="Im1_pagebiere" src="/img/biere.png" alt="Une image de bière">
+
+            <img class="imageBiere" id="Im2_pagebiere" src="/img/biere2.png" alt="Une image de bière">
+        </div>
+    </main>
+</body>

@@ -20,6 +20,15 @@ async function getBeer(id) {
     return await (await fetch(`/api/beer/${id}`, requestOptions)).json();
 }
 
+async function getRefuelTime(beerId) {
+    var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    return (await (await fetch(`/api/beer-refuel-time/${beerId}`, requestOptions)).json());
+}
+
 /**
  * @param beer: {id: number, name: string, type: string, alcohol: number, price: number, mark: number, description: string, imagePath: string, stock: number}
  * @returns {Promise<void>}
