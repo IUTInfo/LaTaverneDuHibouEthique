@@ -1,3 +1,7 @@
+/**
+ *
+ * @returns {Promise<{ id: number, name: string, type: string, alcohol: number, price: number, mark: number, description: string | undefined, imagePath: string | undefined, stock: number }[]>}
+ */
 async function getBeers() {
     var requestOptions = {
         method: 'GET',
@@ -17,7 +21,7 @@ async function getBeer(id) {
 }
 
 /**
- * @param beer: {id: number, name: string, type: string, alcohol: number, price: number, description: string, imagePath: string, stock: number}
+ * @param beer: {id: number, name: string, type: string, alcohol: number, price: number, mark: number, description: string, imagePath: string, stock: number}
  * @returns {Promise<void>}
  */
 async function updateBeer(beer) {
@@ -54,7 +58,7 @@ async function getOrder(orderId) {
 
 /**
  *
- * @param order: {firstname: string, lastname: string, pigeonnumber: string, address: string, beers: [id: number]: number}]}
+ * @param order: {firstname: string, lastname: string, pigeonnumber: string, address: string, beers: [id: number]: number}
  * @returns {Promise<void>}
  */
 async function postOrder(order) {
@@ -68,5 +72,24 @@ async function postOrder(order) {
         redirect: 'follow'
     };
 
-    await fetch("/api/order", requestOptions);
+    const response = await fetch("/api/order", requestOptions);
+    if (!response.ok)
+        throw new Error("Failed to post order");
+}
+
+/**
+ *
+ * @returns {{ beers: Object.<beerId: number, amount: number> } | undefined}
+ */
+function getCurrentOrder() {
+    const rawOrder = localStorage.getItem("currentOrder");
+    return !!rawOrder ? JSON.parse(rawOrder) : undefined;
+}
+
+function setCurrentOrder(currentOrder) {
+    if (currentOrder === undefined) {
+        localStorage.removeItem("currentOrder");
+        return;
+    }
+    localStorage.setItem("currentOrder", JSON.stringify(currentOrder));
 }

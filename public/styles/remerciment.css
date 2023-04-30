@@ -1,0 +1,17 @@
+@import './commun.css';
+
+button {
+    margin-top: 178px;
+    padding: 10px 40px;
+    font-family: 'Alegreya SC';
+    font-size: 1.25rem;
+    color: white;
+    border: none;
+}
+div#list {
+    padding-top: 5px;
+}
+
+div#list p {
+    margin: 10px 0;
+}

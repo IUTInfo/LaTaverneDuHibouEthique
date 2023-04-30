@@ -11,7 +11,8 @@ foreach ($rawBeers as $beer) {
     $type = $beer['type'];
     $alcohol = $beer['alcohol'];
     $price = $beer['price'];
-    $beers[] = new Beer($beerid, $name, $type, $alcohol, $price, null, null, 0);
+    $mark = $beer['mark'];
+    $beers[] = new Beer($beerid, $name, $type, $alcohol, $price, $mark, null, null, 0);
 }
 
 $dataBeers = pdo_query_all('SELECT * FROM beer', []);
@@ -24,6 +25,7 @@ foreach ($dataBeers as $dataBeer)
 
 $beersToAdd = [];
 $beersToDelete = [];
+$beersToUpdate = [];
 
 foreach ($beers as $beer) {
     $found = false;
@@ -49,19 +51,46 @@ foreach ($existingBeers as $existingBeer) {
         $beersToDelete[] = $existingBeer;
 }
 
+foreach ($beers as $beer) {
+    foreach ($existingBeers as $existingBeer) {
+        if ($beer->getId() === $existingBeer->getId()) {
+            if ($beer->getName() !== $existingBeer->getName() ||
+                $beer->getType() !== $existingBeer->getType() ||
+                $beer->getAlcohol() !== $existingBeer->getAlcohol() ||
+                $beer->getPrice() !== $existingBeer->getPrice() ||
+                $beer->getMark() !== $existingBeer->getMark()) {
+                $beersToUpdate[] = $beer;
+            }
+            break;
+        }
+    }
+}
+
 pdo_begin_transaction();
 foreach ($beersToAdd as $beer) {
-    pdo_update('INSERT INTO beer (beerid, name, type, alcohol, price) VALUES (?, ?, ?, ?, ?)', [
+    pdo_update('INSERT INTO beer (beerid, name, type, alcohol, price, mark) VALUES (?, ?, ?, ?, ?, ?)', [
         $beer->getId(),
         $beer->getName(),
         $beer->getType(),
         $beer->getAlcohol(),
-        $beer->getPrice()
+        $beer->getPrice(),
+        $beer->getMark()
     ]);
 }
 
 foreach ($beersToDelete as $beer) {
     pdo_update('DELETE FROM beer WHERE beerid = ?', [
+        $beer->getId()
+    ]);
+}
+
+foreach ($beersToUpdate as $beer) {
+    pdo_update('UPDATE beer SET name = ?, type = ?, alcohol = ?, price = ?, mark = ? WHERE beerid = ?', [
+        $beer->getName(),
+        $beer->getType(),
+        $beer->getAlcohol(),
+        $beer->getPrice(),
+        $beer->getMark(),
         $beer->getId()
     ]);
 }

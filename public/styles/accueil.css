@@ -1,0 +1,61 @@
+@import './commun.css';
+
+main {
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    
+}
+header #blocLogo {
+    display: none;
+}
+
+header {
+    justify-content: flex-end;
+}
+span {
+    display: none;
+}
+
+#taverne {
+    color: #E36016;
+    text-align: center;
+}
+@media (min-width: 1000px) { 
+    /*Styles pour les pages qui font au moins 500 pixels.*/
+    .grid-conteneur {
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+    }
+}
+@media (max-width: 1000px) { 
+    /*Styles pour les pages qui font au plus 500 pixels.*/
+    .colone1 {
+        display: none 
+    }
+}
+
+#miseEnAvant {
+    display:flex;
+    flex-direction: column;
+    width: 35rem;
+}
+#container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 1rem 5rem 1rem;
+}
+
+#hibou {
+    height: 40rem;
+    position:absolute;
+    left:0;
+    z-index: -1;
+}
+
+#button {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}

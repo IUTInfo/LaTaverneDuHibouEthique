@@ -1,2 +1,4 @@
 RewriteEngine on
-RewriteRule ^home$ index.html
+DirectoryIndex accueil.html
+RewriteRule ^accueil$ accueil.html
+RewriteRule ^paiement$ paiement.html

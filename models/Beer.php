@@ -7,17 +7,19 @@ class Beer
     private string $type;
     private int $alcohol;
     private int $price;
+    private int $mark;
     private ?string $description;
     private ?string $imagePath;
     private int $stock;
 
-    public function __construct(int $id, string $name, string $type, int $alcohol, int $price, ?string $description, ?string $imagePath, int $stock)
+    public function __construct(int $id, string $name, string $type, int $alcohol, int $price, int $mark, ?string $description, ?string $imagePath, int $stock)
     {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;
         $this->alcohol = $alcohol;
         $this->price = $price;
+        $this->mark = $mark;
         $this->description = $description;
         $this->imagePath = $imagePath;
         $this->stock = $stock;
@@ -104,6 +106,22 @@ class Beer
     }
 
     /**
+     * @return int
+     */
+    public function getMark(): int
+    {
+        return $this->mark;
+    }
+
+    /**
+     * @param int $mark
+     */
+    public function setMark(int $mark): void
+    {
+        $this->mark = $mark;
+    }
+
+    /**
      * @return string|null
      */
     public function getDescription(): ?string
@@ -158,6 +176,7 @@ class Beer
             !array_key_exists('type', $row) ||
             !array_key_exists('alcohol', $row) ||
             !array_key_exists('price', $row) ||
+            !array_key_exists('mark', $row) ||
             !array_key_exists('description', $row) ||
             !array_key_exists('imagepath', $row) ||
             !array_key_exists('stock', $row))
@@ -169,6 +188,7 @@ class Beer
             $row['type'],
             intval($row['alcohol']),
             intval($row['price']),
+            intval($row['mark']),
             $row['description'],
             $row['imagepath'],
             intval($row['stock'])
@@ -177,7 +197,7 @@ class Beer
 
     public static function from_view(): Beer
     {
-        list($id, $name, $type, $alcohol, $price, $description, $imagePath, $stock) = json_body(['id', 'name', 'type', 'alcohol', 'price'], ['description', 'imagePath', 'stock']);
+        list($id, $name, $type, $alcohol, $price, $mark, $description, $imagePath, $stock) = json_body(['id', 'name', 'type', 'alcohol', 'price', 'mark'], ['description', 'imagePath', 'stock']);
 
         if ($id !== null)
             $id = verify_number($id);
@@ -186,6 +206,7 @@ class Beer
         $type = verify_text($type, 1, 45);
         $alcohol = verify_number($alcohol);
         $price = verify_number($price);
+        $mark = verify_number($mark, allow_zero: true);
         $description = verify_text($description, 0, 65565, true, true);
         $imagePath = verify_text($imagePath, 0, 128, true, true);
         $stock = verify_number($stock ?? 0, allow_zero: true);
@@ -196,6 +217,7 @@ class Beer
             $type,
             intval($alcohol),
             intval($price),
+            intval($mark),
             $description,
             $imagePath,
             intval($stock)
@@ -210,6 +232,7 @@ class Beer
             'type' => $this->type,
             'alcohol' => $this->alcohol,
             'price' => $this->price,
+            'mark' => $this->mark,
             'description' => $this->description,
             'imagePath' => $this->imagePath,
             'stock' => $this->stock

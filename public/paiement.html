@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Taverne - Paiement</title>
+    <link rel="stylesheet" href="./styles/paiement.css">
+    <script defer src="./scripts/api.js"></script>
+    <script defer src="./scripts/paiement.js"></script>
+</head>
+<body>
+    <header>
+        <a id="blocLogo" href="./accueil.html">
+            <img src="./img/logo.png" id="logo" alt="Logo">
+            <span>La taverne du<br>hibou éthique</span>
+        </a>
+        <div id="links">
+            <a href="./accueil.html">Accueil</a>
+            <a href="./nosbieres.html">Nos bières</a>
+            <a href="./panier.html">Panier</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>PAIEMENT</h1>
+        <div id="container">
+            <form id="order-form">
+                <div id="inputs">
+                    <input type="text" name="name" placeholder="Nom" required>
+                    <input type="text" name="address" placeholder="Adresse de la mine" required>
+                    <input type="number" name="pigeonnumber" placeholder="Numéro de pigeon" required>
+                </div>
+
+                <button type="submit">Procéder au paiement</button>
+            </form>
+            <div id="commande">
+                <h2>Votre commande</h2>
+                <div id="beer-container">
+                    <hr>
+                    <span>
+                        <p>Total</p>
+                        <p id="beer-sum"></p>
+                    </span>
+                    <span>
+                        <p>+ Echantillon offert par la maison de NOM BIERE</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+<footer>
+    <a href="https://www.youtube.com/watch?v=YEfRk_WC8Dc">A propos</a>
+    <p> | </p>
+    <a href="">Notre équipe</a>
+</footer>
+
+</body>
+</html>
