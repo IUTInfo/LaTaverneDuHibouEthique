@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteRule ^beer/([0-9]+)$ beer.php?id=$1 [END]
+RewriteRule ^beer$ beer.php [END]
+RewriteRule ^beers$ beers.php [END]
+RewriteRule ^beer-refuel-time/([0-9]+)$ beer_refuel_time.php?id=$1 [END]
+RewriteRule ^order/([0-9]+)$ order.php?id=$1 [END]
+RewriteRule ^order$ order.php [END]
+RewriteRule ^sync$ sync.php [END]
+RewriteRule ^(.*)$ 404.php

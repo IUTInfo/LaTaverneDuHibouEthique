@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteRule ^(api)($|/) - [L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule (.*) /public/$1 [L]
+
+ErrorDocument 404 /public/404.html
