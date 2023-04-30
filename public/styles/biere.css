@@ -67,10 +67,11 @@
 }
 
 #Im1_pagebiere{
-    height:18%;
+    /*height:18%;
     width: 18%;
     transform: rotate(30deg);
-    margin-top: 15%;
+    margin-top: 15%;*/
+    object-fit: contain;
 }
 
 #Im2_pagebiere{

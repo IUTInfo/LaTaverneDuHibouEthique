@@ -1,0 +1,100 @@
+/** GENERAL**/
+@import './commun.css';
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
+
+main {
+    padding: 0 6rem 0 6rem;
+}
+
+
+
+.bieres{
+    text-align: center;
+
+    display: grid;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-template-rows: min-content min-content min-content min-content;
+    grid-auto-flow: column;
+    gap: 1rem 2rem;
+
+    align-items: flex-end;
+    justify-items: center;
+}
+
+.biere{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    justify-content: space-between;
+}
+
+.biere a {
+    width: 100%;
+    display: flex;
+}
+
+.biere a button {
+    width: 100%;
+}
+
+.biere > div {
+    width: 100%;
+}
+
+
+
+.bieres img {
+    width: 3rem;
+    margin: 0;
+}
+
+p{
+    text-align: left;
+}
+
+.pConteneur{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+h4{
+    margin: 0;
+}
+
+h2, h4{
+    text-align: left;
+}
+
+img.bouteilleImportante {
+    width: 4.5rem;
+}
+
+.bouteilleImportante > h2 {
+    font-size: 2.5rem;
+}
+
+.bouteilleImportante > p {
+    font-size: 1.5rem;
+}
+
+.bouteilleImportante > a > button {
+    font-size: 1.8rem;
+}
+
+
+.button { 
+    min-width: 100%;
+}
+
+.button a {
+    display: flex;
+}
+
+.button a button {
+    flex-grow: 1;
+}

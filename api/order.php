@@ -48,17 +48,19 @@ if (is_post()) {
     ]);
 
     foreach ($order->getBeers() as $beer => $amount) {
+        pdo_update('UPDATE beer SET stock = stock - ? WHERE beerid = ?', [
+            $amount,
+            $beer
+        ]);
+    }
+
+    $beers = $order->getBeers();
+    $beers[1] = array_key_exists(1, $beers) ? $beers[1] + 1 : 1;
+    foreach ($order->getBeers() as $beer => $amount) {
         pdo_update('INSERT INTO order_beer (orderid, beerid, amount) VALUES (?, ?, ?)', [
             $id,
             $beer,
             $amount
-        ]);
-    }
-
-    foreach ($order->getBeers() as $beer => $amount) {
-        pdo_update('UPDATE beer SET stock = stock - ? WHERE beerid = ?', [
-            $amount,
-            $beer
         ]);
     }
     pdo_commit();

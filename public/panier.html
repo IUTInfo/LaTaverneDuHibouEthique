@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/commun.css">
-        <link rel="stylesheet" type="text/css" href="../css/stylePanier.css">
+        <link rel="stylesheet" type="text/css" href="/styles/panier.css">
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="../img/icon.ico">
         <title>Panier</title>
     </head>
     <body>
         <header>
-            <a id="blocLogo" href="accueil.html">
-            <img src="../img/logo.png" id="logo" alt="Logo">
+            <a id="blocLogo" href="index.html">
+            <img src="/img/logo.png" id="logo" alt="Logo">
             <span>La taverne du<br>hibou éthique</span>
             </a>
             <div id="links">
-            <a href="accueil.html">Accueil</a>
+            <a href="index.html">Accueil</a>
             <a href="nosbieres.html">Nos bières</a>
             <a href="panier.html">Panier</a>
             </div>
@@ -24,17 +22,17 @@
                  <!-- comment en créer plus ou moins?? -->
                 <h1>Panier</h1>
                 <p id="cacher">Gurdil was here</p>
-                    <img src="../img/biere.png" alt="Une bière" class="Photo"/>
-                    <div id="biere">
+                    <img src="/img/biere.png" alt="Une bière" class="Photo"/>
+                    <div class="biere">
                         <h2>Titre bière</h2>
                         <h3>type</h3>
-                        <div id="info">
+                        <div class="info">
                             <h3>7.5%</h3>
                             <h3>28 Or/bouteille</h3>
-                            <div id="info">
-                                <button class="boutonPM" type="button" id="boutonP">+</button>
-                                <button class="boutonPM" type="button" id="boutonM">-</button>
-                                <button class="boutonSuppr" type="button" id="boutonSuppr">Supprimer</button>
+                            <div class="info">
+                                <button class="boutonPM" type="button">+</button>
+                                <button class="boutonPM" type="button">-</button>
+                                <button class="boutonSuppr" type="button">Supprimer</button>
                                 <br>
                             </div> 
                         </div> 
@@ -45,17 +43,17 @@
             
 
                     <img src="../img/biere.png" alt="Une bière" class="Photo"/>
-                    <div id="biere">
+                    <div class="biere">
                         <h2>Titre bière</h2>
                         <h3>type</h3>
                         
-                        <div id="info">
+                        <div class="info">
                             <h3>7.5%</h3>
                             <h3>28 Or/bouteille</h3>
-                            <div id="info">
-                                <button class="boutonPM" type="button" id="boutonP">+</button>
-                                <button class="boutonPM" type="button" id="boutonM">-</button>
-                                <button class="boutonSuppr" type="button" id="boutonSuppr">Supprimer</button>
+                            <div class="info">
+                                <button class="boutonPM" type="button">+</button>
+                                <button class="boutonPM" type="button">-</button>
+                                <button class="boutonSuppr" type="button">Supprimer</button>
                                 <br>
                             </div> 
                         </div>
@@ -66,16 +64,16 @@
 
                 <h2>LA suggestion</h2><br>
                         <img src="../img/biere.png" alt="Une bière" class="Photo"/>
-                        <div id="biere">
+                        <div class="biere">
                             <h2>Titre bière</h2>
                             <h3>type</h3>
                             
-                            <div id="info">
+                            <div class="info">
                                 <h3>7.5%</h3>
                                 <h3>28 Or/bouteille</h3>
-                                <div id="info">
-                                    <button class="boutonPM" type="button" id="boutonP">+</button>
-                                    <button class="boutonPM" type="button" id="boutonM">-</button>
+                                <div class="info">
+                                    <button class="boutonPM" type="button">+</button>
+                                    <button class="boutonPM" type="button">-</button>
                                     <br>
                                 </div> 
                             </div>
@@ -89,31 +87,31 @@
 
             </figure>
             <figure id="resumer">
-                <h2 id="centrage">Votre commande</h2><br>
+                <h2 class="text-center">Votre commande</h2><br>
                 <p>
-                    <div id="commande">
+                    <div class="commande">
                         <h3>4xTitre bière</h3> 
                         <h3>150 Or</h3> 
                     </div>
                     
-                    <div id="commande">
+                    <div class="commande">
                         <h3>4xTitre bière</h3> 
                         <h3>150 Or</h3> 
                     </div>
                 </p>
-                <p id="centrage">
+                <p class="text-center">
                     _______________________________
                 </p>
 
                 <p>
-                    <div id="commande">
+                    <div class="commande">
                         <h3>Total</h3>
                         <h3>150 Or</h3>
                     </div>
                     <h3>+ un échantillon de ....</h3>
                 </p>
             
-                <p id="centrage">
+                <p class="text-center">
                 <a href="test.html"><button class="bouton" type="button" id="boutonB">Procéder au paiment</button></a><!-- lien a la page paiement -->
                 </p>
             </figure>

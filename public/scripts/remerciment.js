@@ -9,7 +9,7 @@ function addItemToList(name, amount) {
 getBeers().then(async beers => {
     const currentOrder = getCurrentOrder();
     if (!currentOrder) {
-        window.location.href = "/accueil.html";
+        window.location.href = "/index.html";
         return;
     }
 

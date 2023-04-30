@@ -46,14 +46,14 @@
 
 }
 
-#biere{
+.biere{
     position:relative;
     padding-left: 10%;
     margin-bottom: 10%;
    
 }
 
-#info{
+.info{
     display: flex;
     justify-content: space-between;
     margin-right: 10%;
@@ -68,7 +68,7 @@
 	text-align: left;
 }
 
-#commande{
+.commande{
     display: flex;
     justify-content: space-between;
 }
@@ -81,6 +81,6 @@ main{
     color:#1E1D1A;
 }
 
-#centrage{
+.text-center {
     text-align: center;
 }
